@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>用户信息编辑</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="/css/basic_layout.css" rel="stylesheet" type="text/css">
+<link href="/css/common_style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<form action="/admin/list" method="post">
+	<input type="hidden" name="fyID" value="14458625716623" id="fyID"/>
+	<div id="container">
+		<div id="nav_links">
+			当前位置：基础数据&nbsp;>&nbsp;<span style="color: #1A5CC6;">用户信息编辑</span>
+		</div>
+		<div class="ui_content">
+			<table  cellspacing="0" cellpadding="0" width="100%" align="left" border="0">
+				<tr>
+					<td class="ui_text_rt">userId</td>
+					<?php foreach ($this->userinfo as $res){?>
+					<td>
+						<input type="text" name="userId" value="<?=$res['userId']?>"/>
+					</td>
+				</tr>
+				<tr>
+				<td class="ui_text_rt">identityType</td>
+					<td class="ui_text_lt">
+						<input type="text" name="identityType" value="<?=$res['identityType']?>" />
+					</td>
+				</tr>
+				<tr>
+				<td class="ui_text_rt">identifier</td>
+					<td class="ui_text_lt">
+						<input type="text" name="identifier" value="<?=$res['identifier']?>" />
+					</td>
+				</tr>
+				<tr>
+				<td class="ui_text_rt">credential</td>
+					<td class="ui_text_lt">
+						<input type="text" name="credential" value="<?=$res['credential']?>" />
+					</td>
+				</tr>
+				<tr>
+				<td class="ui_text_rt">loginNum</td>
+					<td class="ui_text_lt">
+						<input type="text" name="loginNum" value="<?=$res['loginNum']?>" />
+					</td>
+				</tr>
+				<tr>
+				<td class="ui_text_rt">loginTime</td>
+					<td class="ui_text_lt">
+						<input type="text" name="loginTime" value="<?=$res['loginTime']?>" />
+					</td>
+				</tr>
+				<?php }?>
+				<tr>
+					<td>&nbsp;</td>
+					<td class="ui_text_lt">
+						&nbsp;<input type="submit" value="提交" />
+						&nbsp;<input type="submit" value="取消" />
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</form>
+
+</body>
+</html>
